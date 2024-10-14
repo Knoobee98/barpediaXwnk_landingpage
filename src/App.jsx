@@ -1,26 +1,25 @@
 import { useState } from 'react'
 import cuyLogo from './assets/logo.svg'
+import {Route, Routes} from 'react-router-dom'
 import './App.css'
 
+import Landingpage from "./page/landingpage"
+import Aboutpage from "./page/aboutPage"
+import Servicespage from "./page/servicesPage"
+import Contactpage from "./page/contactPage"
+import Navbar from "./components/navbar"
 function App() {
     const [count, setCount] = useState(0)
 
     return (
         <div className="App">
-        <div>
-            <a href="https://youtube.com/deaafrizal" target="_blank">
-            <img src={cuyLogo} className="logo cuy" alt="Cuy logo" />
-            </a>
-        </div>
-        <h1>🏆 REACTVITE PACK 🏆</h1>
-        <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-            realtime click {count}
-            </button>
-        </div>
-        <p className="read-the-docs">
-            how to run this pack: npm i & npm run dev on your terminal.
-        </p>
+        <Navbar/>
+        <Routes>
+            <Landingpage/>
+            <Aboutpage/>
+            <Servicespage/>
+            <Contactpage/>
+        </Routes>
         </div>
     )
 }
